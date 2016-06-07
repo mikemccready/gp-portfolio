@@ -43,7 +43,7 @@ function attachListeners() {
 	window.onscroll = function() {
 	    var newScrollPosition = window.scrollY;
 
-	    if (newScrollPosition < lastScrollPosition){
+	    if (newScrollPosition < lastScrollPosition || newScrollPosition === 0){
 	        document.querySelector('.title-bar').style.top = "0em";
 	    }else{
 	        document.querySelector('.title-bar').style.top = "-5em";
