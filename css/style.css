@@ -209,4 +209,39 @@ a:hover, .main-nav ul li:hover {
 	transition: .5s;
 }
 
+@media(min-width: 1000px) {
+
+	.work {
+		position: relative;
+		display: block;
+		text-align: left;
+		width: 70%;
+		margin: 7.5em 15%;
+		height: 41em;
+	}
+
+	.work div {
+		display: inline-block;
+	}
+
+	.works-mobile-mock img, #kilos-mock {
+		max-width: 20em;
+	}
+
+	#kilos-mock {
+		margin-top: 2em;
+	}
+
+	.works-desc {
+		position: absolute;
+		display: inline-block;
+	    margin: auto;
+	    padding: 0 10%;
+	    max-width: 40em;
+	}
+
+	.work:not(:last-child) .works-desc {
+		padding-top: 7.5em;
+	}		
+}
 
