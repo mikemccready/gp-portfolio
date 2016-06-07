@@ -15,10 +15,10 @@ function loadTemplate() {
 	document.querySelector('.bg').style.background = 'white';
 	document.querySelector('.page-title').innerHTML = title;
 	mainContainer.innerHTML = template;
-	document.querySelector('nav').style.backgroundImage = 'url(assets/white-bg.png)';
+	document.querySelector('nav').style.backgroundImage = 'url(assets/white-bg.jpg)';
 	document.querySelector('nav').style.color = 'black';
 	document.querySelector('.page-title').style.color = 'black';
-	document.querySelector('.title-bar').style.backgroundImage = 'url(assets/white-bg.png)';
+	document.querySelector('.title-bar').style.backgroundImage = 'url(assets/white-bg.jpg)';
 
 	window.scrollTo(0, 0);
 }

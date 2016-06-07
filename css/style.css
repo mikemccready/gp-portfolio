@@ -7,16 +7,6 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
     src: url(../assets/denz.otf);    
 }
 
-@font-face {
-    font-family: bb;
-    src: url(../assets/BemboStd-ExtraBold.otf);    
-}
-
-@font-face {
-    font-family: b;
-    src: url(../assets/BemboStd.otf);    
-}
-
 body {
 	font-family: courier;
 	font-weight: normal !important;
@@ -182,7 +172,7 @@ form {
 
 form input, form textarea {
 	display: block;
-    background: url("../assets/white-bg.png");
+    background: url("../assets/white-bg.jpg");
     background-size: cover;
     border: none;
     height: 2em;
