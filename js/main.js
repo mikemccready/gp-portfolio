@@ -34,7 +34,7 @@ function attachListeners() {
 		document.querySelector('.page-title').innerHTML = 'mimic';
 		mainContainer.innerHTML = '';
 		document.querySelector('.bg').style.backgroundImage = 'url(assets/bg2.jpg)';
-		document.querySelector('nav').style.backgroundImage = 'url(assets/black-bg.png)';
+		document.querySelector('nav').style.backgroundImage = 'url(assets/black-bg.jpg)';
 		document.querySelector('nav').style.color = 'white';
 		document.querySelector('.page-title').style.color = 'white';
 		document.querySelector('.title-bar').style.backgroundImage = '';		
