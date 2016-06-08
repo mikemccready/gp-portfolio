@@ -2,6 +2,8 @@
 
 
 var mainContainer = document.querySelector('.main-container');
+var pageTitle = document.querySelector('.page-title');
+var nav = document.querySelector('nav');
 var lastScrollPosition = 0;
 
 function loadTemplate() {
@@ -11,38 +13,59 @@ function loadTemplate() {
 
 	req.onload = function (e) {
 		mainContainer.innerHTML = e.target.responseText;
+		resumeListeners()
 	};
 	req.open('GET', '../views/' + title + '.html', true);
 	req.send();	
 
-	document.querySelector('.bg').style.background = 'white';
-	document.querySelector('.page-title').innerHTML = title;
-	document.querySelector('nav').style.backgroundImage = 'url(assets/white-bg.jpg)';
-	document.querySelector('nav').style.color = 'black';
-	document.querySelector('.page-title').style.color = 'black';
+	nav.style.backgroundImage = 'url(assets/white-bg.jpg)';
+	nav.style.color = 'black';		
+
+	pageTitle.innerHTML = title;
+	pageTitle.style.color = 'black';
 	document.querySelector('.title-bar').style.backgroundImage = 'url(assets/white-bg.jpg)';
+	document.querySelector('.bg').style.background = 'white';
 
 	window.scrollTo(0, 0);
 }
 
 function attachListeners() {
-	var navLink = document.querySelectorAll('.nav-link');
 	document.querySelector('#logo').addEventListener('click', goHome);
 	window.onscroll = scrolledNav;		
 
+	var navLink = document.querySelectorAll('.nav-link');
 	for (var i = 0; i < navLink.length; i++) {
 	    navLink[i].addEventListener('click', loadTemplate);
+	}	
+}
+
+function resumeListeners() {
+	var resumeHeader = document.querySelectorAll('.resume-section-head');
+	for (var i = 0; i < resumeHeader.length; i++) {
+	    resumeHeader[i].addEventListener('click', showSection);
+	}
+}
+
+function showSection() {
+	var section = this.innerHTML.toLowerCase();
+
+	if(document.querySelector('.' + section).style.display !== 'block'){
+		document.querySelector('.' + section).style.display = 'block';
+	}else {
+		document.querySelector('.' + section).style.display = 'none';		
 	}
 }
 
 function goHome() {
-	document.querySelector('.page-title').innerHTML = 'mimic';
 	mainContainer.innerHTML = '';
-	document.querySelector('.bg').style.backgroundImage = 'url(assets/bg2.jpg)';
-	document.querySelector('nav').style.backgroundImage = 'url(assets/black-bg.jpg)';
-	document.querySelector('nav').style.color = 'white';
-	document.querySelector('.page-title').style.color = 'white';
-	document.querySelector('.title-bar').style.backgroundImage = '';
+	document.querySelector('.bg').style.backgroundImage = 'url(assets/bg2.jpg)';	
+
+	nav.style.backgroundImage = 'url(assets/black-bg.jpg)';
+	nav.style.color = 'white';	
+
+	pageTitle.innerHTML = 'mimic';
+	pageTitle.style.color = 'white';
+	document.querySelector('.title-bar').style.backgroundImage = '';	
 }
 
 function scrolledNav() {
@@ -57,7 +80,7 @@ function scrolledNav() {
 
 (function go() {
 	setTimeout(function() {
-		document.querySelector('nav').className = 'main-nav anim';		
+		nav.className = 'main-nav anim';		
 	}, 1000);
 
 	attachListeners();
