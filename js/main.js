@@ -6,27 +6,40 @@ var pageTitle = document.querySelector('.page-title');
 var nav = document.querySelector('nav');
 var lastScrollPosition = 0;
 
-function loadTemplate() {
-
+var getTemplate = function() {
 	var title = this.innerHTML;
-	var req = new XMLHttpRequest();
+	return new Promise(function(resolve, reject) {
+		var req = new XMLHttpRequest();
+		req.open('GET', '../views/' + title + '.html', true);
 
-	req.onload = function (e) {
-		mainContainer.innerHTML = e.target.responseText;
-		resumeListeners()
-	};
-	req.open('GET', '../views/' + title + '.html', true);
-	req.send();	
+		req.onload = function() {
+			if(req.status === 200) {
+				resolve(req.response)
+			}
+		}
+
+		req.send();		
+	}).then(function(res) {
+		return loadTemplate(res, title);
+	})
+}	
+
+var loadTemplate = function(res, title) {
+	mainContainer.innerHTML = res;
+	pageTitle.innerHTML = title;
 
 	nav.style.backgroundImage = 'url(assets/white-bg.jpg)';
 	nav.style.color = 'black';		
 
-	pageTitle.innerHTML = title;
 	pageTitle.style.color = 'black';
 	document.querySelector('.title-bar').style.backgroundImage = 'url(assets/white-bg.jpg)';
 	document.querySelector('.bg').style.background = 'white';
 
 	window.scrollTo(0, 0);
+
+	if(title === 'resume') {
+		resumeListeners();
+	}
 }
 
 function attachListeners() {
@@ -35,7 +48,7 @@ function attachListeners() {
 
 	var navLink = document.querySelectorAll('.nav-link');
 	for (var i = 0; i < navLink.length; i++) {
-	    navLink[i].addEventListener('click', loadTemplate);
+	    navLink[i].addEventListener('click', getTemplate);
 	}	
 }
 
