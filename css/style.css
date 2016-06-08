@@ -168,6 +168,10 @@ h1 {
 	margin-bottom: 3.5em;
 }
 
+.resume section div {
+	display: none;
+}
+
 form {
     width: 90%;
     margin: 0 auto 1em;
