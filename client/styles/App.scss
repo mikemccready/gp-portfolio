@@ -117,6 +117,8 @@ h5 {
 }
 
 .intro-page {
+	overflow-x: hidden;
+	
 	#intro-bg {
 		position: fixed;
 		height: 100vh;
@@ -161,6 +163,7 @@ h5 {
 }
 
 .work-page {
+	padding-bottom: 5em;
 	.work-section {
 		position: absolute;
 		top: 0;
@@ -299,6 +302,7 @@ h5 {
 			width: 1.5em;
 			background-size: cover;
 			background-image: url(/assets/img/icons.png);
+			background-repeat: no-repeat;
 		}
 
 		h5 {
