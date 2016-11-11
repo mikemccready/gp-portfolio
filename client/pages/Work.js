@@ -1,6 +1,5 @@
 // Work.js
 import React from 'react';
-import { Link } from 'react-router';
 import WorkSection from '../components/WorkSection'
 
 export default class Work extends React.Component {
@@ -42,7 +41,6 @@ export default class Work extends React.Component {
   	if(!this.state.workSections[index]) {
   		index = 0;
   	}
-  	console.log(index)
   	this.setState({sectionIndex: index})
   }
 
@@ -54,7 +52,7 @@ export default class Work extends React.Component {
 			if (this.state.sectionIndex === i) {
 				return <div key={i} className="position-dot active" data-index={i}></div>
 			}
-			return <div className="position-dot" data-index={i}></div>
+			return <div key={i} className="position-dot" data-index={i}></div>
 		});
 
 		return (

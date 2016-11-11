@@ -1,6 +1,5 @@
 // NavPage.js
 import React from 'react';
-import { Link } from 'react-router';
 
 const openStyle = {
 	left: '0vw',
@@ -24,9 +23,9 @@ export default function NavPage(props) {
   return (
     <div style={navStyle} className="nav-page">
     	<div className="nav-flex-container">
-	    	<h2 className='nav-page-item'><Link to="/work" onClick={props.toggleNav}>Work</Link></h2>
-	    	<h2 className='nav-page-item'><Link to="/contact" onClick={props.toggleNav}>Contact</Link></h2>
-	    	<h2 className='nav-page-item'><Link to="/experience" onClick={props.toggleNav}>Experience</Link></h2>
+	    	<h2 className='nav-page-item' onClick={(e) => {props.toggleNav(e); props.changeView('Work')}}>Work</h2>
+	    	<h2 className='nav-page-item' onClick={(e) => {props.toggleNav(e); props.changeView('Contact')}}>Contact</h2>
+	    	<h2 className='nav-page-item' onClick={(e) => {props.toggleNav(e); props.changeView('Experience')}}>Experience</h2>
     	</div>
     </div>
   )

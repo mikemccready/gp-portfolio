@@ -1,6 +1,5 @@
 // Experience.js
 import React from 'react';
-import { Link } from 'react-router';
 
 export default class Experience extends React.Component {
 	render() {
@@ -20,8 +19,7 @@ export default class Experience extends React.Component {
 					</div>
 				</a>
 				<h3>TECHNICAL SKILLS</h3>
-				<p>Strong Javascript, React, Angular, SASS/LESS, HTML/CSS, Express, Node, MongoDB, Github</p>
-				<p>Experienced  Ruby on Rails, Webpack/Gulp, Socket.io, Firebase, PostgreSQL, Heroku, AmazonS3</p>
+				<p>Javascript, React, Angular, SASS/LESS, Express, Node, MongoDB, Ruby on Rails, Github, Webpack, Gulp, Socket.io, Firebase, PostgreSQL, Heroku, AmazonS3</p>
 				
 				<h3>EXPERIENCE</h3>
 				<h5>Software Engineer | Synthesis	2016</h5>

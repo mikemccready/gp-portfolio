@@ -12,13 +12,13 @@ export default function NavButton(props) {
 		buttonText = 'close';
 	}
 
-	if(window.location.pathname.slice(1) === '') {
-		activePage = '';
-	}
+	setTimeout(() => {
+    	document.getElementsByClassName('nav-button')[0].style.opacity = '1';
+  	}, 5000)
 
-  return (
-    <div onClick={props.toggleNav} className='nav-button'>
-    	{activePage}  <div className='main-nav-button'>{buttonText}</div>
-    </div>
-  )
+	return (
+		<div onClick={props.toggleNav} className='nav-button'>
+			<div className='main-nav-button'>{buttonText}</div>
+		</div>
+	)
 }

@@ -1,5 +1,7 @@
 /*App.scss*/
-$second-color: rgb(132, 117, 78);
+$gold: rgb(132, 117, 78);
+$highlight: #05D9C2;
+
 @font-face {
 	font-family: 'Denz';
 	src: url('/assets/denz.woff');
@@ -25,7 +27,12 @@ body {
 	a {
 		text-decoration: none;
 		cursor: pointer;
-		color: black;
+		color: $gold;
+		transition: .25s;
+	}
+
+	a:hover {
+		color: $highlight;
 	}
 }
 
@@ -42,6 +49,10 @@ h5 {
 	letter-spacing: 0.025em;
 }
 
+p {
+	color: rgba(0,0,0,.6);
+}
+
 .nav-button {
 	position: fixed;
 	top: 0;
@@ -53,6 +64,9 @@ h5 {
 	font-family: GaraBold;
 	/*text-transform: uppercase;*/
 	letter-spacing: .15em;
+	font-size: 1.25em;
+	opacity: 0;
+	transition: .5s;
 
 	.main-nav-button {
 		display: inline-block;
@@ -61,10 +75,11 @@ h5 {
 		border: none;
 		text-decoration: none;
 		transition: 1s;
+		color: $gold;
 	}
 
 	.main-nav-button:hover {
-		color: $second-color;
+		color: $highlight;
 		width: 4em;
 	}
 }
@@ -102,21 +117,28 @@ h5 {
 			font-size: 2.5em;
 			letter-spacing: .175em;
 			transition: 1s;
+			color: $gold !important;
 		}
 
 		.nav-page-item:hover {
-			color: $second-color !important;
+			color: $highlight !important;
 			padding-left: .25em;
+			cursor: pointer;
 		}
 
 		.nav-page-item a:hover {
-			color: $second-color !important;
+			color: $highlight !important;
 			transition: 1s;
+			cursor: pointer;
 		}
 	}
 }
 
 .intro-page {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
 	overflow-x: hidden;
 
 	#intro-bg {
@@ -132,7 +154,7 @@ h5 {
 		background-size: 70px;
 	    background-position: center center;
 
-	   	transition: opacity 3.5s ease-in;
+	   	transition: opacity 1s ease-in;
 	}
 
 	.intro-band {
@@ -168,14 +190,16 @@ h5 {
 		position: absolute;
 		top: 0;
 		margin: 20vh 13vw;
-		width: 50vw;
+		width: 70vw;
+		max-width: 45em;
 
 		.work-icons {
+			display: inline-block;
 			height: 1.75em;
 			position: relative;
 			margin-bottom: 1.5em;
 			cursor: pointer;
-			width: 6.5em;
+			width: 3.5em;
 
 			.work-icon {
 				display: inline-block;
@@ -192,6 +216,10 @@ h5 {
 				height: 1.5em;
 				top: 0;
 				margin: 0 .25em;
+				color: black;
+			}
+			h5:hover {
+				color: $highlight;
 			}
 		}
 
@@ -247,36 +275,16 @@ h5 {
 				letter-spacing: .15em;
 				cursor: pointer;
 				padding: .5em 1em;
+				color: $gold;
+			}
+
+			.next-sect-button:hover {
+				color: $highlight;
 			}
 		}
 	}
 
 
-}
-
-.status-bar {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100vw;
-	height: 3em;
-	background-color: rgba(255,255,255,.95);
-
-	h3 {
-		position: absolute;
-		left: 0;
-		display: inline-block;
-		letter-spacing: .15em;
-		font-weight: normal;
-		padding: 0 1em;
-	}
-
-	p {
-		position: absolute;
-		right: 0;
-		display: inline-block;
-		padding: 0 1em;
-	}
 }
 
 .experience-page {
@@ -364,35 +372,62 @@ h5 {
 		background-color: transparent;
 		cursor: pointer;
 		transition: 1s;
+		color: $gold;
 	}
 
 	button:hover {
-		color: $second-color;
+		color: $highlight;
 		padding-right: 1em;
 	}
 }
 
-/*@media (min-width: 80em) {
-	.intro-page {
-		#intro-bg {
-			width: 80vw;
-			left: 20vw;
-		}
 
-		.intro-band {
+@media (max-width: 25em) {
+	.work-page {
+		.work-section {
+			position: absolute;
 			top: 0;
-			left: 0;
-			width: calc(20vw - 2em);
+			margin: 10vh 6vw;
+			width: 83vw;
+		}		
+	}
 
-			h1 {
-				letter-spacing: .25em;
+	.nav-page {
+		.nav-flex-container {
+			.nav-page-item {
 				font-size: 2em;
-				margin: 0 auto .5em;
-			}
-
-			h3 {
-
 			}
 		}
-	}	
-}*/
+	}
+
+	.nav-button {
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding: 1em;
+		background-color: rgba(255,255,255,.95);
+		cursor: pointer;
+		z-index: 100;
+		font-family: GaraBold;
+		/*text-transform: uppercase;*/
+		letter-spacing: .15em;
+		font-size: 1.25em;
+		opacity: 0;
+		transition: .5s;
+
+		.main-nav-button {
+			display: inline-block;
+			width: 2.75em;
+			background-color: transparent;
+			border: none;
+			text-decoration: none;
+			transition: 1s;
+			color: $gold;
+		}
+
+		.main-nav-button:hover {
+			color: $highlight;
+			width: 4em;
+		}
+	}
+}
