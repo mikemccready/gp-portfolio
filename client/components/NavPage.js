@@ -2,30 +2,30 @@
 import React from 'react';
 
 const openStyle = {
-	left: '0vw',
+  right: '0em'
 };
 
 const closedStyle = {
-	left: '100vw',
+  right: '-35em'
 };
 
 export default function NavPage(props) {
 
-	let isOpen = props.navOpen;
-	let navStyle;
+  let navState;
 
-	if(isOpen) {
-		navStyle = openStyle;
-	} else {
-		navStyle = closedStyle;
-	}
+  if (props.navOpen) {
+    navState = openStyle;
+  } else {
+    navState = closedStyle;
+  }
 
   return (
-    <div style={navStyle} className="nav-page">
+    <div className="nav-page" style={navState}>
     	<div className="nav-flex-container">
-	    	<h2 className='nav-page-item' onClick={(e) => {props.toggleNav(e); props.changeView('Work')}}>Work</h2>
-	    	<h2 className='nav-page-item' onClick={(e) => {props.toggleNav(e); props.changeView('Contact')}}>Contact</h2>
-	    	<h2 className='nav-page-item' onClick={(e) => {props.toggleNav(e); props.changeView('Experience')}}>Experience</h2>
+        <h2 className='nav-page-item' onClick={(e) => {props.toggleNav(); props.changeView('Intro')}}>Home</h2>
+	    	<h2 className='nav-page-item' onClick={(e) => {props.toggleNav(); props.changeView('Work')}}>Work</h2>
+	    	<h2 className='nav-page-item' onClick={(e) => {props.toggleNav(); props.changeView('Contact')}}>Contact</h2>
+	    	<h2 className='nav-page-item' onClick={(e) => {props.toggleNav(); props.changeView('Experience')}}>Experience</h2>
     	</div>
     </div>
   )

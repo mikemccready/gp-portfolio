@@ -15,6 +15,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
     	navOpen: false,
+      navButton: '=',
       currentView: 'Intro'
     }
     this.changeView = this.changeView.bind(this);
@@ -26,10 +27,14 @@ export default class App extends React.Component {
     this.setState({currentView: newView})
   }
 
-  toggleNav(e) {
-  	let navOpen = this.state.navOpen;
-  	navOpen = !navOpen;
-  	this.setState({navOpen: navOpen})
+  toggleNav() {
+    let newNavState = !this.state.navOpen;
+    
+    if (newNavState) {
+      this.setState({navOpen: newNavState, navButton: 'x'})
+    } else {
+      this.setState({navOpen: newNavState, navButton: '='})
+    }
   }
 
   render() {
@@ -47,8 +52,9 @@ export default class App extends React.Component {
 
     return (
 	    <div>
-	    	<NavButton navOpen={this.state.navOpen} toggleNav={this.toggleNav} currentView={this.state.currentView} />
-	    	<NavPage navOpen={this.state.navOpen} toggleNav={this.toggleNav} changeView={this.changeView} />
+        <div id="intro-bg"></div>
+	    	<NavButton changeView={this.changeView} toggleNav={this.toggleNav} navText={this.state.navButton} />
+        <NavPage key="4" changeView={this.changeView} toggleNav={this.toggleNav} navOpen={this.state.navOpen} />
 				{currentView}
 	    </div>
     )

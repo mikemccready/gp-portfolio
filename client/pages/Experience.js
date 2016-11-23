@@ -53,7 +53,6 @@ export default class Experience extends React.Component {
 				<p>Codesmith | Software Engineering Academy | Full-stack Javascript and Computer Science	2016</p>
 				<p>UCLAx | Interaction Design | Responsive Development and User Experience	2013</p>
 				<p>UCSB | Business Economics | Statistics, Game Theory, Micro and Macroeconomics	2005-2009</p>
-				
 			</div>
 		)
 	}
