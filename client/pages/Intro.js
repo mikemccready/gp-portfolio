@@ -10,7 +10,7 @@ export default function Intro(props) {
   // }, 2500)
 
   setTimeout(() => {
-    document.getElementsByClassName('intro-CPU')[0].src = "assets/img/cpu-on.png";
+    document.getElementsByClassName('intro-CPU')[0].src = "assets/img/cpu-on.jpg";
   }, 2500)
 
   setTimeout(() => {
@@ -18,7 +18,7 @@ export default function Intro(props) {
   }, 2650)
 
   setTimeout(() => {
-    document.getElementsByClassName('intro-CPU')[0].src = "assets/img/cpu-on.png";
+    document.getElementsByClassName('intro-CPU')[0].src = "assets/img/cpu-on.jpg";
   }, 2750)
 
   return (

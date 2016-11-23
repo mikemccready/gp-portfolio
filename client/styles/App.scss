@@ -398,34 +398,9 @@ p {
 		}
 	}
 
-	.nav-button {
-		position: fixed;
-		top: 0;
-		right: 0;
-		padding: 1em;
-		background-color: rgba(255,255,255,.95);
-		cursor: pointer;
-		z-index: 100;
-		font-family: GaraBold;
-		/*text-transform: uppercase;*/
-		letter-spacing: .15em;
-		font-size: 1.25em;
-		opacity: 0;
-		transition: .5s;
-
-		.main-nav-button {
-			display: inline-block;
-			width: 2.75em;
-			background-color: transparent;
-			border: none;
-			text-decoration: none;
-			transition: 1s;
-			color: $gold;
-		}
-
-		.main-nav-button:hover {
-			color: $highlight;
-			width: 4em;
+	.intro-band {
+		h3 {
+			font-size: 1em !important;
 		}
 	}
 }
